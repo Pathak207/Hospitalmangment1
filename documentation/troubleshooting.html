@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting - Doctor Care Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-lg border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <i class="fas fa-stethoscope text-3xl text-primary-600"></i>
+                            <div class="ml-4">
+                                <h1 class="text-3xl font-bold text-gray-900">Doctor Care</h1>
+                                <p class="text-lg text-gray-600">Troubleshooting Guide</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="index.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Docs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Page Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Troubleshooting Guide</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Common issues and their solutions to help you resolve problems quickly.
+                </p>
+            </div>
+
+            <!-- Quick Help -->
+            <div class="bg-gradient-to-r from-red-500 to-red-600 rounded-lg shadow-xl overflow-hidden mb-8">
+                <div class="px-6 py-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">🚨 Need Quick Help?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h3 class="font-semibold text-white mb-2">Check Server Status</h3>
+                            <p class="text-red-100 text-sm">Ensure your development server is running on port 3000</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h3 class="font-semibold text-white mb-2">Database Connection</h3>
+                            <p class="text-red-100 text-sm">Verify MongoDB is running and accessible</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h3 class="font-semibold text-white mb-2">Environment Variables</h3>
+                            <p class="text-red-100 text-sm">Check .env.local file configuration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installation Issues -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-download mr-3 text-red-600"></i>
+                        Installation Issues
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- npm install fails -->
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ npm install fails</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Common error messages:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">npm ERR! peer dep missing</div>
+                                    <div class="text-red-400">npm ERR! network timeout</div>
+                                    <div class="text-red-400">npm ERR! permission denied</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Clear npm cache: <code class="bg-gray-200 px-2 py-1 rounded">npm cache clean --force</code></li>
+                                    <li>• Delete node_modules and package-lock.json, then reinstall</li>
+                                    <li>• Use different package manager: <code class="bg-gray-200 px-2 py-1 rounded">yarn install</code> or <code class="bg-gray-200 px-2 py-1 rounded">pnpm install</code></li>
+                                    <li>• Check Node.js version (requires 18.0+)</li>
+                                    <li>• Run with admin privileges if on Windows</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Environment file issues -->
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ Environment file not found</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Error message:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">Error: Cannot find .env.local file</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Create .env.local file in project root</li>
+                                    <li>• Copy from .env.example if available</li>
+                                    <li>• Ensure file name is exactly <code class="bg-gray-200 px-2 py-1 rounded">.env.local</code></li>
+                                    <li>• Check file permissions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Port already in use -->
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ Port 3000 already in use</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Error message:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">Error: listen EADDRINUSE: address already in use :::3000</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Kill process using port 3000: <code class="bg-gray-200 px-2 py-1 rounded">lsof -ti:3000 | xargs kill -9</code></li>
+                                    <li>• Use different port: <code class="bg-gray-200 px-2 py-1 rounded">npm run dev -- -p 3001</code></li>
+                                    <li>• Restart your computer</li>
+                                    <li>• Check for other Next.js instances running</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Issues -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-database mr-3 text-blue-600"></i>
+                        Database Issues
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- MongoDB connection failed -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ MongoDB connection failed</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Common error messages:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">MongooseServerSelectionError</div>
+                                    <div class="text-red-400">ECONNREFUSED</div>
+                                    <div class="text-red-400">Authentication failed</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check MongoDB service is running</li>
+                                    <li>• Verify MONGODB_URI in .env.local</li>
+                                    <li>• For local MongoDB: ensure it's installed and running on port 27017</li>
+                                    <li>• For MongoDB Atlas: check network access and credentials</li>
+                                    <li>• Test connection string manually</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Database seeding issues -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ Database seeding fails</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Error when running seed commands:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">Error: Cannot connect to database</div>
+                                    <div class="text-red-400">Validation error</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Ensure database connection is working first</li>
+                                    <li>• Check if seed script exists in scripts folder</li>
+                                    <li>• Run with force flag: <code class="bg-gray-200 px-2 py-1 rounded">npm run seed:force</code></li>
+                                    <li>• Clear existing data and retry</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authentication Issues -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-shield-alt mr-3 text-yellow-600"></i>
+                        Authentication Issues
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- Cannot create admin user -->
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ Cannot create admin user</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Error message:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">500 Internal Server Error</div>
+                                    <div class="text-red-400">User creation failed</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check database connection</li>
+                                    <li>• Verify NEXTAUTH_SECRET is set</li>
+                                    <li>• Use POST request to /api/auth/create-admin</li>
+                                    <li>• Check request body format matches expected schema</li>
+                                    <li>• Review server logs for detailed error</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Login not working -->
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ Login not working</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Common issues:</p>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• Invalid credentials</li>
+                                    <li>• Session not persisting</li>
+                                    <li>• Redirect not working</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Clear browser cookies and cache</li>
+                                    <li>• Check NEXTAUTH_URL matches your domain</li>
+                                    <li>• Verify NEXTAUTH_SECRET is properly set</li>
+                                    <li>• Check user exists in database</li>
+                                    <li>• Try incognito/private browsing mode</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Session expires quickly -->
+                        <div class="border-l-4 border-yellow-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ Session expires quickly</h3>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check NextAuth configuration for session duration</li>
+                                    <li>• Verify NEXTAUTH_SECRET is consistent</li>
+                                    <li>• Check browser settings for cookies</li>
+                                    <li>• Review middleware configuration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Issues -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-tachometer-alt mr-3 text-green-600"></i>
+                        Performance Issues
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- Slow loading -->
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">🐌 Application loading slowly</h3>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check database query performance</li>
+                                    <li>• Optimize MongoDB indexes</li>
+                                    <li>• Reduce image sizes</li>
+                                    <li>• Enable caching where appropriate</li>
+                                    <li>• Consider using SWR for data fetching</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- High memory usage -->
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">📈 High memory usage</h3>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check for memory leaks in components</li>
+                                    <li>• Optimize database queries to use less memory</li>
+                                    <li>• Implement pagination for large datasets</li>
+                                    <li>• Use React.memo for expensive components</li>
+                                    <li>• Clean up event listeners and subscriptions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Issues -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-palette mr-3 text-purple-600"></i>
+                        UI/UX Issues
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- Layout broken -->
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">🎨 Layout appears broken</h3>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Clear browser cache and reload</li>
+                                    <li>• Check if Tailwind CSS is loading properly</li>
+                                    <li>• Verify all CSS imports are working</li>
+                                    <li>• Check browser console for CSS errors</li>
+                                    <li>• Test in different browsers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Dark mode not working -->
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">🌙 Dark mode not working</h3>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check Tailwind dark mode configuration</li>
+                                    <li>• Verify dark: classes are properly applied</li>
+                                    <li>• Check theme provider implementation</li>
+                                    <li>• Clear localStorage if theme preference is cached</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Mobile responsive issues -->
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">📱 Mobile responsive issues</h3>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check viewport meta tag</li>
+                                    <li>• Test responsive classes (sm:, md:, lg:)</li>
+                                    <li>• Verify touch interactions work properly</li>
+                                    <li>• Check for horizontal scroll issues</li>
+                                    <li>• Test on actual mobile devices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Issues -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-code mr-3 text-indigo-600"></i>
+                        API Issues
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- API endpoints not working -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ API endpoints returning errors</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Common error codes:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">404 Not Found</div>
+                                    <div class="text-red-400">500 Internal Server Error</div>
+                                    <div class="text-red-400">401 Unauthorized</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check API route file exists in correct location</li>
+                                    <li>• Verify authentication middleware</li>
+                                    <li>• Check request method (GET, POST, PUT, DELETE)</li>
+                                    <li>• Review server logs for detailed errors</li>
+                                    <li>• Test API endpoints with Postman or curl</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- CORS issues -->
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">❌ CORS errors</h3>
+                            <div class="bg-gray-50 rounded-lg p-4 mb-3">
+                                <p class="text-gray-700 font-medium mb-2">Error message:</p>
+                                <div class="bg-gray-900 rounded p-3 font-mono text-sm">
+                                    <div class="text-red-400">Access to fetch blocked by CORS policy</div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-medium text-gray-900">Solutions:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Check if making requests to same domain</li>
+                                    <li>• Configure CORS headers in Next.js config</li>
+                                    <li>• Use relative URLs for API calls</li>
+                                    <li>• Verify NEXTAUTH_URL matches your domain</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Getting Help -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-xl overflow-hidden">
+                <div class="px-6 py-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">🆘 Still Need Help?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-white mb-3">Before Seeking Help</h3>
+                            <ul class="space-y-2 text-blue-100 text-sm">
+                                <li>• Check browser console for errors</li>
+                                <li>• Review server logs</li>
+                                <li>• Try reproducing the issue</li>
+                                <li>• Note exact error messages</li>
+                                <li>• List steps taken before the issue</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-3">Debugging Tips</h3>
+                            <ul class="space-y-2 text-blue-100 text-sm">
+                                <li>• Use browser developer tools</li>
+                                <li>• Check network tab for failed requests</li>
+                                <li>• Verify environment variables</li>
+                                <li>• Test with sample data</li>
+                                <li>• Try restarting the development server</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="text-center">
+                    <p class="text-gray-600">
+                        <a href="index.html" class="text-primary-600 hover:text-primary-700">← Back to Documentation Home</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

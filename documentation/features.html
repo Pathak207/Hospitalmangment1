@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features Overview - Doctor Care Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-lg border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <i class="fas fa-stethoscope text-3xl text-primary-600"></i>
+                            <div class="ml-4">
+                                <h1 class="text-3xl font-bold text-gray-900">Doctor Care</h1>
+                                <p class="text-lg text-gray-600">Features Overview</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="index.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Docs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Page Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Features Overview</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover all the powerful features that make Doctor Care the complete SaaS healthcare management platform with subscription management, multi-tenancy, and enterprise-grade administration.
+                </p>
+            </div>
+
+            <!-- SaaS Platform Features -->
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg shadow-xl overflow-hidden mb-12">
+                <div class="px-6 py-4 border-b border-purple-500">
+                    <h2 class="text-2xl font-semibold text-white flex items-center">
+                        <i class="fas fa-cloud mr-3"></i>
+                        SaaS Platform Features
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Subscription Management -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-credit-card mr-3 text-yellow-300"></i>
+                                Subscription Management
+                            </h3>
+                            <ul class="space-y-2 text-white/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Multiple subscription plans (Trial, Basic, Professional, Enterprise)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Stripe payment integration with secure processing
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Automated billing and subscription renewals
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Usage tracking and limit enforcement
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Plan-based feature access control
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Billing portal for subscribers
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Super Admin Features -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-crown mr-3 text-yellow-300"></i>
+                                Super Admin Panel
+                            </h3>
+                            <ul class="space-y-2 text-white/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Complete subscriber management and oversight
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Subscription plan creation and management
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Global system settings and configuration
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Email system configuration (SMTP, SendGrid, Mailgun)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Payment gateway settings management
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    System analytics and revenue tracking
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Multi-tenancy -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-building mr-3 text-yellow-300"></i>
+                                Multi-Tenant Architecture
+                            </h3>
+                            <ul class="space-y-2 text-white/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Complete data isolation per organization
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Scalable organization management
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Role-based access control per tenant
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Custom branding per organization
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Independent settings and configurations
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Secure tenant switching and management
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Email System -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-4 flex items-center">
+                                <i class="fas fa-envelope mr-3 text-yellow-300"></i>
+                                Advanced Email System
+                            </h3>
+                            <ul class="space-y-2 text-white/90">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Welcome emails with plan-specific details
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Trial expiration and subscription notifications
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Multiple email provider support (SMTP, SendGrid, Mailgun)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Email template management and customization
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Test email functionality for configuration validation
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-300 mr-2"></i>
+                                    Automated subscription lifecycle emails
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Healthcare Features -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Patient Management -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+                        <h2 class="text-xl font-semibold text-white flex items-center">
+                            <i class="fas fa-users mr-3"></i>
+                            Patient Management
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Comprehensive patient record management with detailed profiles and medical history tracking.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Patient registration and profile management
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Medical history and visit records
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Advanced search and filtering capabilities
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Individual patient dashboards
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Contact information and emergency contacts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Appointment System -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+                        <h2 class="text-xl font-semibold text-white flex items-center">
+                            <i class="fas fa-calendar-alt mr-3"></i>
+                            Appointment Scheduling
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Advanced appointment scheduling system with calendar integration and time slot management.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Interactive calendar interface
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Flexible time slot configuration
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Appointment status tracking
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Working hours and break management
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Real-time availability checking
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Prescription Management -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 px-6 py-4">
+                        <h2 class="text-xl font-semibold text-white flex items-center">
+                            <i class="fas fa-prescription-bottle-alt mr-3"></i>
+                            Prescription Management
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Digital prescription system with comprehensive medication database and tracking.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Digital prescription creation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Comprehensive medication database
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Dosage and instruction management
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Prescription history tracking
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Medication search and filtering
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Medical Records -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 px-6 py-4">
+                        <h2 class="text-xl font-semibold text-white flex items-center">
+                            <i class="fas fa-clipboard-list mr-3"></i>
+                            Medical Records
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Complete medical record management including vitals, notes, and lab results.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Clinical notes and observations
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Vital signs recording and tracking
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Lab results management
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Medical history documentation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Private and shared notes system
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Features -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-12">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-star mr-3 text-yellow-500"></i>
+                        Additional Features
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Reports & Analytics -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-chart-bar mr-2 text-blue-600"></i>
+                                Reports & Analytics
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Clinical reports generation</li>
+                                <li>• Administrative analytics</li>
+                                <li>• Operations metrics</li>
+                                <li>• Compliance reporting</li>
+                                <li>• PDF export functionality</li>
+                            </ul>
+                        </div>
+
+                        <!-- Payment Management -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-dollar-sign mr-2 text-green-600"></i>
+                                Payment Management
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Payment tracking and history</li>
+                                <li>• Multiple payment methods (Card, Cash, Check)</li>
+                                <li>• Payment status monitoring</li>
+                                <li>• Transaction filtering and search</li>
+                                <li>• Revenue reports and analytics</li>
+                            </ul>
+                        </div>
+
+                        <!-- User Authentication -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-shield-alt mr-2 text-red-600"></i>
+                                Security & Authentication
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• NextAuth.js integration</li>
+                                <li>• BCrypt password hashing</li>
+                                <li>• JWT session management</li>
+                                <li>• User roles (doctor, nurse, admin, staff)</li>
+                                <li>• Route protection middleware</li>
+                            </ul>
+                        </div>
+
+                        <!-- Search Functionality -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-search mr-2 text-purple-600"></i>
+                                Search & Discovery
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Global search functionality</li>
+                                <li>• Patient search by multiple criteria</li>
+                                <li>• Medication database search</li>
+                                <li>• Advanced filtering options</li>
+                                <li>• Quick access navigation</li>
+                            </ul>
+                        </div>
+
+                        <!-- Settings Management -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-cog mr-2 text-gray-600"></i>
+                                Settings & Configuration
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Practice information management</li>
+                                <li>• Date format customization</li>
+                                <li>• Multi-currency support (120+ currencies)</li>
+                                <li>• Working hours configuration</li>
+                                <li>• Login page customization and branding</li>
+                                <li>• Global super admin settings</li>
+                                <li>• Tenant-specific configurations</li>
+                            </ul>
+                        </div>
+
+                        <!-- Demo Mode -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-flask mr-2 text-orange-600"></i>
+                                Demo Mode & Testing
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Demo login buttons for testing</li>
+                                <li>• Pre-configured demo accounts</li>
+                                <li>• Super admin and admin demo access</li>
+                                <li>• Environment-based feature toggles</li>
+                                <li>• Development vs production modes</li>
+                            </ul>
+                        </div>
+
+                        <!-- Billing & Payments -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-credit-card mr-2 text-emerald-600"></i>
+                                Billing & Payments
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Stripe payment processing</li>
+                                <li>• Subscription billing automation</li>
+                                <li>• Payment history and invoices</li>
+                                <li>• Failed payment handling</li>
+                                <li>• Billing portal integration</li>
+                                <li>• Revenue analytics and tracking</li>
+                            </ul>
+                        </div>
+
+                        <!-- User Interface -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                <i class="fas fa-palette mr-2 text-pink-600"></i>
+                                User Interface
+                            </h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Modern responsive design</li>
+                                <li>• Dark mode support</li>
+                                <li>• Mobile-friendly interface</li>
+                                <li>• Accessibility features</li>
+                                <li>• Intuitive navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg shadow-xl overflow-hidden mb-12">
+                <div class="px-6 py-4 border-b border-gray-700">
+                    <h2 class="text-2xl font-semibold text-white flex items-center">
+                        <i class="fas fa-code mr-3"></i>
+                        Technology Stack
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-white mb-3 flex items-center">
+                                <i class="fab fa-react mr-2 text-blue-400"></i>
+                                Frontend
+                            </h3>
+                            <ul class="text-gray-300 space-y-1 text-sm">
+                                <li>• Next.js 14 (App Router)</li>
+                                <li>• React 19</li>
+                                <li>• TypeScript</li>
+                                <li>• Tailwind CSS</li>
+                                <li>• Radix UI Components</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-3 flex items-center">
+                                <i class="fas fa-server mr-2 text-green-400"></i>
+                                Backend
+                            </h3>
+                            <ul class="text-gray-300 space-y-1 text-sm">
+                                <li>• Next.js API Routes</li>
+                                <li>• NextAuth.js</li>
+                                <li>• MongoDB with Mongoose</li>
+                                <li>• BCrypt encryption</li>
+                                <li>• RESTful API design</li>
+                                <li>• Stripe API integration</li>
+                                <li>• Nodemailer email service</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-3 flex items-center">
+                                <i class="fas fa-database mr-2 text-yellow-400"></i>
+                                Database
+                            </h3>
+                            <ul class="text-gray-300 space-y-1 text-sm">
+                                <li>• MongoDB</li>
+                                <li>• Mongoose ODM</li>
+                                <li>• Schema validation</li>
+                                <li>• Indexing optimization</li>
+                                <li>• Data relationships</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-3 flex items-center">
+                                <i class="fas fa-tools mr-2 text-red-400"></i>
+                                Additional Tools
+                            </h3>
+                            <ul class="text-gray-300 space-y-1 text-sm">
+                                <li>• SWR for data fetching</li>
+                                <li>• jsPDF for reports</li>
+                                <li>• Date-fns for formatting</li>
+                                <li>• React Hot Toast</li>
+                                <li>• Lucide React Icons</li>
+                                <li>• Stripe.js for payments</li>
+                                <li>• Email template engine</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Highlights -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-lightbulb mr-3 text-yellow-500"></i>
+                        Feature Highlights
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Real-time Updates</h3>
+                            <p class="text-gray-600 mb-3">
+                                Experience instant updates across all pages with our real-time settings management. 
+                                Changes to date formats, currency settings, and other preferences are immediately 
+                                reflected throughout the application without requiring page reloads.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Instant setting synchronization</li>
+                                <li>• Cross-tab updates</li>
+                                <li>• No page refresh required</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Multi-format Support</h3>
+                            <p class="text-gray-600 mb-3">
+                                Flexible date and currency formatting options to accommodate different regional 
+                                preferences and practice requirements. The system automatically formats dates 
+                                and currencies throughout the application based on your selections.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Multiple date formats</li>
+                                <li>• 6 currency options</li>
+                                <li>• Automatic formatting</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Comprehensive API</h3>
+                            <p class="text-gray-600 mb-3">
+                                Well-designed RESTful API endpoints for all major operations. Perfect for 
+                                integrating with external systems, mobile applications, or custom extensions 
+                                to the platform.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• RESTful design principles</li>
+                                <li>• Consistent response formats</li>
+                                <li>• Authentication protected</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Modern Architecture</h3>
+                            <p class="text-gray-600 mb-3">
+                                Built with the latest technologies and best practices. The modular architecture 
+                                makes it easy to extend, customize, and maintain. TypeScript ensures type safety 
+                                and better development experience.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Component-based design</li>
+                                <li>• TypeScript for type safety</li>
+                                <li>• Scalable architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="text-center">
+                    <p class="text-gray-600">
+                        <a href="index.html" class="text-primary-600 hover:text-primary-700">← Back to Documentation Home</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

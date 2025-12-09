@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration - Doctor Care Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-lg border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <i class="fas fa-stethoscope text-3xl text-primary-600"></i>
+                            <div class="ml-4">
+                                <h1 class="text-3xl font-bold text-gray-900">Doctor Care</h1>
+                                <p class="text-lg text-gray-600">Configuration Guide</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="index.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Docs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Page Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Configuration Guide</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Learn how to configure and customize Doctor Care for your practice needs.
+                </p>
+            </div>
+
+            <!-- Environment Variables -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-cog mr-3 text-primary-600"></i>
+                        Environment Variables
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-6">Configure these environment variables in your <code class="bg-gray-200 px-2 py-1 rounded">.env.local</code> file:</p>
+                    
+                    <div class="space-y-6">
+                        <!-- Database Configuration -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">Database Configuration</h3>
+                            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># MongoDB Connection String</div>
+                                <div class="text-gray-300">MONGODB_URI=mongodb://localhost:27017/doctor-care</div>
+                                <div class="text-gray-500 mt-2"># For MongoDB Atlas:</div>
+                                <div class="text-gray-300">MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/doctor-care</div>
+                            </div>
+                            <p class="text-gray-600 mt-2 text-sm">Required for database connection. Use local MongoDB or MongoDB Atlas cloud database.</p>
+                        </div>
+
+                        <!-- Authentication Configuration -->
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">Authentication Configuration</h3>
+                            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># NextAuth Secret Key</div>
+                                <div class="text-gray-300">NEXTAUTH_SECRET=your_secret_key_here</div>
+                                <div class="text-gray-500 mt-2"># Application URL</div>
+                                <div class="text-gray-300">NEXTAUTH_URL=http://localhost:3000</div>
+                            </div>
+                            <div class="mt-3 p-3 bg-yellow-50 border-l-4 border-yellow-400">
+                                <p class="text-yellow-700 text-sm">
+                                    <strong>Generate Secret:</strong> Use <code class="bg-yellow-200 px-1 rounded">openssl rand -base64 32</code> to generate a secure secret key.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Environment Configuration -->
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">Environment Settings</h3>
+                            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># Environment Mode</div>
+                                <div class="text-gray-300">NODE_ENV=development</div>
+                                <div class="text-gray-500 mt-2"># For production:</div>
+                                <div class="text-gray-300">NODE_ENV=production</div>
+                            </div>
+                        </div>
+
+                        <!-- SaaS Configuration -->
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h3 class="font-semibold text-gray-900 mb-2">SaaS Platform Configuration</h3>
+                            <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <p class="text-blue-700 text-sm mb-2">
+                                    <i class="fas fa-info-circle mr-1"></i>
+                                    <strong>Note:</strong> Stripe credentials are configured through the Super Admin panel, not environment variables.
+                                </p>
+                                <p class="text-blue-600 text-sm">
+                                    Login as super admin → Settings → Payment Gateway tab to configure Stripe integration.
+                                </p>
+                            </div>
+                            
+                            <div class="mt-4 bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># Demo Mode (Optional)</div>
+                                <div class="text-gray-300 mb-3">NEXT_PUBLIC_DEMO_MODE=demo</div>
+                                
+                                <div class="text-green-400 mb-2"># Email Configuration (Configure via Super Admin Panel)</div>
+                                <div class="text-gray-500 mb-1"># Email settings: Set via Super Admin → Settings → Email tab</div>
+                                <div class="text-gray-500 mb-1"># Supports Gmail, SMTP, SendGrid, Mailgun providers</div>
+                            </div>
+                            <p class="text-gray-600 mt-2 text-sm">
+                                SaaS-specific environment variables. Email and Stripe settings are configured through the Super Admin panel.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SaaS Platform Settings -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-cloud mr-3 text-primary-600"></i>
+                        SaaS Platform Settings
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-6">Configure these SaaS-specific settings through the Super Admin panel:</p>
+                    
+                    <div class="space-y-6">
+                        <!-- Subscription Plans -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Subscription Plans Configuration</h3>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Plan Features</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• Patient limits (unlimited = -1)</li>
+                                            <li>• User limits (unlimited = -1)</li>
+                                            <li>• Appointment limits (unlimited = -1)</li>
+                                            <li>• Custom branding access</li>
+                                            <li>• API access</li>
+                                            <li>• Priority support</li>
+                                            <li>• Advanced reports</li>
+                                            <li>• SMS notifications</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Plan Configuration</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• Monthly and yearly pricing</li>
+                                            <li>• Stripe price ID integration</li>
+                                            <li>• Plan display order</li>
+                                            <li>• Default plan selection</li>
+                                            <li>• Plan activation status</li>
+                                            <li>• Plan descriptions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email System -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Email System Configuration</h3>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">SMTP Providers</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• Gmail (smtp.gmail.com:587)</li>
+                                            <li>• Outlook (smtp-mail.outlook.com:587)</li>
+                                            <li>• Custom SMTP</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">API Providers</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• SendGrid</li>
+                                            <li>• Mailgun</li>
+                                            <li>• API key configuration</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Email Templates</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• Welcome emails</li>
+                                            <li>• Trial expiration</li>
+                                            <li>• Subscription confirmations</li>
+                                            <li>• Test email functionality</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Gateway -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Payment Gateway Settings</h3>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Stripe Configuration</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• Publishable and secret keys</li>
+                                            <li>• Webhook endpoints</li>
+                                            <li>• Test vs live mode</li>
+                                            <li>• Webhook secret validation</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Payment Features</h4>
+                                        <ul class="text-sm text-gray-600 space-y-1">
+                                            <li>• Automatic billing</li>
+                                            <li>• Failed payment handling</li>
+                                            <li>• Customer portal access</li>
+                                            <li>• Invoice generation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Settings -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-sliders-h mr-3 text-primary-600"></i>
+                        Application Settings
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-6">Configure these settings through the application's Settings page after installation:</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Date Format Settings -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-calendar mr-2 text-blue-600"></i>
+                                Date Format Options
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center">
+                                    <span class="w-20 font-mono bg-gray-100 px-2 py-1 rounded mr-2">MM/DD/YYYY</span>
+                                    <span>US Format (12/25/2024)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-20 font-mono bg-gray-100 px-2 py-1 rounded mr-2">DD/MM/YYYY</span>
+                                    <span>European Format (25/12/2024)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-20 font-mono bg-gray-100 px-2 py-1 rounded mr-2">YYYY-MM-DD</span>
+                                    <span>ISO Format (2024-12-25)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-20 font-mono bg-gray-100 px-2 py-1 rounded mr-2">MMM DD, YYYY</span>
+                                    <span>Long Format (Dec 25, 2024)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Currency Settings -->
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="fas fa-dollar-sign mr-2 text-green-600"></i>
+                                Currency Options
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center">
+                                    <span class="w-12 font-mono bg-gray-100 px-2 py-1 rounded mr-2">USD</span>
+                                    <span>US Dollar ($)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-12 font-mono bg-gray-100 px-2 py-1 rounded mr-2">EUR</span>
+                                    <span>Euro (€)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-12 font-mono bg-gray-100 px-2 py-1 rounded mr-2">GBP</span>
+                                    <span>British Pound (£)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-12 font-mono bg-gray-100 px-2 py-1 rounded mr-2">CAD</span>
+                                    <span>Canadian Dollar (C$)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-12 font-mono bg-gray-100 px-2 py-1 rounded mr-2">AUD</span>
+                                    <span>Australian Dollar (A$)</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-12 font-mono bg-gray-100 px-2 py-1 rounded mr-2">INR</span>
+                                    <span>Indian Rupee (₹)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400">
+                        <p class="text-blue-700 text-sm">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Settings are stored in localStorage and automatically synchronized across browser tabs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment Configuration -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-calendar-alt mr-3 text-primary-600"></i>
+                        Appointment Configuration
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-6">Configure appointment scheduling settings through the time slots API:</p>
+                    
+                    <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm mb-4">
+                        <div class="text-green-400 mb-2">Default Appointment Settings:</div>
+                        <pre class="text-gray-300">{
+  "startTime": "08:30 AM",
+  "endTime": "05:00 PM",
+  "interval": 30,
+  "workDays": [1, 2, 3, 4, 5],
+  "lunchBreak": {
+    "start": "12:30 PM",
+    "end": "01:30 PM",
+    "enabled": true
+  }
+}</pre>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Time Configuration</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>startTime:</strong> Practice opening time</li>
+                                <li><strong>endTime:</strong> Practice closing time</li>
+                                <li><strong>interval:</strong> Appointment duration in minutes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Working Days</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>workDays:</strong> Array of working days</li>
+                                <li><strong>0:</strong> Sunday</li>
+                                <li><strong>1-5:</strong> Monday to Friday</li>
+                                <li><strong>6:</strong> Saturday</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Configuration -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-database mr-3 text-primary-600"></i>
+                        Database Configuration
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- MongoDB Setup -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">MongoDB Connection Options</h3>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <i class="fas fa-server mr-2 text-blue-600"></i>
+                                        Local MongoDB
+                                    </h4>
+                                    <div class="bg-gray-900 rounded-lg p-3 font-mono text-xs mb-2">
+                                        <div class="text-gray-300">mongodb://localhost:27017/doctor-care</div>
+                                    </div>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• Install MongoDB locally</li>
+                                        <li>• Default port 27017</li>
+                                        <li>• No authentication required</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <i class="fas fa-cloud mr-2 text-green-600"></i>
+                                        MongoDB Atlas
+                                    </h4>
+                                    <div class="bg-gray-900 rounded-lg p-3 font-mono text-xs mb-2">
+                                        <div class="text-gray-300">mongodb+srv://user:pass@cluster.mongodb.net/doctor-care</div>
+                                    </div>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• Cloud-hosted database</li>
+                                        <li>• Free tier available</li>
+                                        <li>• Automatic backups</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seeding Data -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Database Seeding</h3>
+                            <p class="text-gray-600 mb-3">The system includes medication seeding scripts:</p>
+                            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># Seed medications database</div>
+                                <div class="text-gray-300 mb-2">npm run seed</div>
+                                <div class="text-green-400 mb-2"># Force overwrite existing data</div>
+                                <div class="text-gray-300">npm run seed:force</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Configuration -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-shield-alt mr-3 text-primary-600"></i>
+                        Security Configuration
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <!-- NextAuth Configuration -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">NextAuth.js Security</h3>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-2">Session Configuration</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• JWT-based sessions</li>
+                                        <li>• Secure HTTP-only cookies</li>
+                                        <li>• Automatic session refresh</li>
+                                        <li>• Configurable session duration</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-2">Password Security</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• BCrypt password hashing</li>
+                                        <li>• Salt rounds: 12</li>
+                                        <li>• No plain text storage</li>
+                                        <li>• Secure password validation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Route Protection -->
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Route Protection</h3>
+                            <p class="text-gray-600 mb-3">The middleware protects these routes automatically:</p>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-mono">
+                                    <div>/dashboard</div>
+                                    <div>/patients</div>
+                                    <div>/appointments</div>
+                                    <div>/prescriptions</div>
+                                    <div>/medications</div>
+                                    <div>/settings</div>
+                                    <div>/api/patients</div>
+                                    <div>/api/appointments</div>
+                                    <div>/api/prescriptions</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Configuration -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-tachometer-alt mr-3 text-primary-600"></i>
+                        Performance Configuration
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Next.js Optimization</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    App Router for improved performance
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Server-side rendering (SSR)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Automatic code splitting
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Image optimization
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Database Optimization</h3>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Mongoose connection pooling
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Indexed queries for performance
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Pagination for large datasets
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Lean queries when appropriate
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Production Configuration -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-lg shadow-xl overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-700">
+                    <h2 class="text-2xl font-semibold text-white flex items-center">
+                        <i class="fas fa-server mr-3"></i>
+                        Production Configuration
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-white mb-3">Environment Variables</h3>
+                            <div class="bg-gray-800 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># Production settings</div>
+                                <div class="text-gray-300 mb-1">NODE_ENV=production</div>
+                                <div class="text-gray-300 mb-1">NEXTAUTH_URL=https://yourdomain.com</div>
+                                <div class="text-gray-300 mb-3">MONGODB_URI=mongodb+srv://...</div>
+                                
+                                <div class="text-green-400 mb-2"># SaaS Production Settings (Configure via Super Admin)</div>
+                                <div class="text-gray-500 mb-1"># Stripe credentials: Set via Super Admin → Settings → Payment Gateway</div>
+                                <div class="text-gray-500 mb-1"># Email settings: Configure via Super Admin → Settings panel</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-3">Deployment Checklist</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Set secure NEXTAUTH_SECRET
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Configure production database
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Update NEXTAUTH_URL
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Enable HTTPS
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Test all functionality
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Configure Stripe live keys
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Set up email system
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Create super admin account
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-400 mr-2"></i>
+                                    Configure subscription plans
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="text-center">
+                    <p class="text-gray-600">
+                        <a href="index.html" class="text-primary-600 hover:text-primary-700">← Back to Documentation Home</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

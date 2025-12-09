@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide - Doctor Care Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-lg border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <i class="fas fa-stethoscope text-3xl text-primary-600"></i>
+                            <div class="ml-4">
+                                <h1 class="text-3xl font-bold text-gray-900">Doctor Care</h1>
+                                <p class="text-lg text-gray-600">User Guide</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hidden md:block">
+                        <a href="index.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-700 bg-primary-100 hover:bg-primary-200">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Docs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Page Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">User Guide</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Complete guide on how to use all features and modules in Doctor Care system.
+                </p>
+            </div>
+
+            <!-- Getting Started -->
+            <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg shadow-xl overflow-hidden mb-8">
+                <div class="px-6 py-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">Getting Started</h2>
+                    <p class="text-white/90 mb-6">
+                        After successful installation, you'll need to create your first admin user and configure basic settings.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h3 class="font-semibold text-white mb-2">1. Create Admin User</h3>
+                            <p class="text-white/80 text-sm">Use the /api/auth/create-admin endpoint to create your first admin user.</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <h3 class="font-semibold text-white mb-2">2. Login & Setup</h3>
+                            <p class="text-white/80 text-sm">Login with your admin credentials and configure system settings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Overview -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-tachometer-alt mr-3 text-primary-600"></i>
+                        Dashboard Overview
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-6">The dashboard provides an overview of your practice with key metrics and quick access to important functions.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Dashboard Features</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                                    Practice analytics and metrics
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-calendar text-blue-500 mr-2"></i>
+                                    Today's appointments overview
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-users text-purple-500 mr-2"></i>
+                                    Recent patient activities
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-tasks text-orange-500 mr-2"></i>
+                                    Quick action shortcuts
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 mb-3">Navigation</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-bars text-gray-500 mr-2"></i>
+                                    Main navigation sidebar
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-search text-gray-500 mr-2"></i>
+                                    Global search functionality
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-user text-gray-500 mr-2"></i>
+                                    User profile and settings
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-moon text-gray-500 mr-2"></i>
+                                    Dark mode toggle
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module Guides -->
+            <div class="space-y-8">
+                <!-- Patient Management -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-blue-50">
+                        <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i class="fas fa-users mr-3 text-blue-600"></i>
+                            Patient Management
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Adding New Patients</h3>
+                                <ol class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">1</span>
+                                        Navigate to Patients section
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">2</span>
+                                        Click "Add New Patient" button
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">3</span>
+                                        Fill required information (name, contact, etc.)
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">4</span>
+                                        Save patient profile
+                                    </li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Patient Features</h3>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-id-card text-blue-500 mr-2"></i>
+                                        Comprehensive patient profiles
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-history text-blue-500 mr-2"></i>
+                                        Medical history tracking
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-search text-blue-500 mr-2"></i>
+                                        Advanced search and filtering
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-edit text-blue-500 mr-2"></i>
+                                        Easy profile editing
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appointment Scheduling -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-green-50">
+                        <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i class="fas fa-calendar-alt mr-3 text-green-600"></i>
+                            Appointment Scheduling
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Scheduling Appointments</h3>
+                                <ol class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">1</span>
+                                        Go to Appointments section
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">2</span>
+                                        Click "Schedule Appointment"
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">3</span>
+                                        Select patient and preferred date
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">4</span>
+                                        Choose available time slot
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">5</span>
+                                        Add appointment details and confirm
+                                    </li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Appointment Management</h3>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-clock text-green-500 mr-2"></i>
+                                        Real-time availability checking
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-calendar-check text-green-500 mr-2"></i>
+                                        Calendar view with click-to-schedule
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-bell text-green-500 mr-2"></i>
+                                        Appointment status tracking
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-edit text-green-500 mr-2"></i>
+                                        Easy rescheduling and cancellation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prescription Management -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-purple-50">
+                        <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i class="fas fa-prescription-bottle-alt mr-3 text-purple-600"></i>
+                            Prescription Management
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Creating Prescriptions</h3>
+                                <ol class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">1</span>
+                                        Access patient profile
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">2</span>
+                                        Go to Prescriptions tab
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">3</span>
+                                        Click "New Prescription"
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">4</span>
+                                        Search and select medications
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">5</span>
+                                        Add dosage and instructions
+                                    </li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Prescription Features</h3>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-pills text-purple-500 mr-2"></i>
+                                        Comprehensive medication database
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-search text-purple-500 mr-2"></i>
+                                        Quick medication search
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-history text-purple-500 mr-2"></i>
+                                        Prescription history tracking
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-print text-purple-500 mr-2"></i>
+                                        Digital prescription generation
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Records -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-orange-50">
+                        <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i class="fas fa-clipboard-list mr-3 text-orange-600"></i>
+                            Medical Records
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-6">
+                            <!-- Clinical Notes -->
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Clinical Notes</h3>
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Adding Notes</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Access patient profile</li>
+                                            <li>• Click on Notes tab</li>
+                                            <li>• Select note type (visit, observation, etc.)</li>
+                                            <li>• Write detailed notes</li>
+                                            <li>• Set privacy level (private/shared)</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Note Types</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Visit notes</li>
+                                            <li>• Clinical observations</li>
+                                            <li>• Treatment plans</li>
+                                            <li>• Follow-up instructions</li>
+                                            <li>• Progress notes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Vitals -->
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Vital Signs</h3>
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Recording Vitals</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Blood pressure (systolic/diastolic)</li>
+                                            <li>• Heart rate (bpm)</li>
+                                            <li>• Temperature (°F or °C)</li>
+                                            <li>• Respiratory rate</li>
+                                            <li>• Oxygen saturation</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Tracking Features</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Historical tracking</li>
+                                            <li>• Trend analysis</li>
+                                            <li>• Alert thresholds</li>
+                                            <li>• Visual charts</li>
+                                            <li>• Export capabilities</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lab Results -->
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Lab Results</h3>
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Managing Results</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Upload lab reports</li>
+                                            <li>• Enter test values</li>
+                                            <li>• Add result interpretation</li>
+                                            <li>• Link to appointments</li>
+                                            <li>• Share with patients</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-2">Result Types</h4>
+                                        <ul class="space-y-1 text-sm text-gray-600">
+                                            <li>• Blood tests</li>
+                                            <li>• Imaging studies</li>
+                                            <li>• Pathology reports</li>
+                                            <li>• Diagnostic tests</li>
+                                            <li>• Screening results</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports & Analytics -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-indigo-50">
+                        <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i class="fas fa-chart-bar mr-3 text-indigo-600"></i>
+                            Reports & Analytics
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Practice Analytics Dashboard</h3>
+                                <ol class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">1</span>
+                                        Navigate to Reports section
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">2</span>
+                                        View real-time practice metrics
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-semibold mr-3 mt-0.5">3</span>
+                                        Select date range for filtering
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-color text-xs font-semibold mr-3 mt-0.5">4</span>
+                                        Export data as CSV or PDF
+                                    </li>
+                                </ol>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Available Analytics</h3>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-users text-indigo-500 mr-2"></i>
+                                        Patient demographics and trends
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-calendar text-indigo-500 mr-2"></i>
+                                        Appointment statistics by type/status
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-indigo-500 mr-2"></i>
+                                        Revenue analysis by service type
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-pills text-indigo-500 mr-2"></i>
+                                        Prescription patterns and top medications
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h3 class="font-semibold text-gray-900 mb-3">Generate Detailed Reports</h3>
+                            <p class="text-gray-600 mb-4">The system can generate comprehensive reports in 4 categories with AI-powered insights:</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-blue-900 mb-2">Clinical Reports</h4>
+                                    <ul class="text-sm text-blue-700 space-y-1">
+                                        <li>• Patient visit analysis</li>
+                                        <li>• Common diagnoses tracking</li>
+                                        <li>• Age group demographics</li>
+                                        <li>• Appointment completion rates</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-purple-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-purple-900 mb-2">Administrative Reports</h4>
+                                    <ul class="text-sm text-purple-700 space-y-1">
+                                        <li>• Average wait times</li>
+                                        <li>• Cancellation rates</li>
+                                        <li>• Staff productivity metrics</li>
+                                        <li>• Referral patterns</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-amber-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-amber-900 mb-2">Operations Reports</h4>
+                                    <ul class="text-sm text-amber-700 space-y-1">
+                                        <li>• Financial performance</li>
+                                        <li>• Medication inventory alerts</li>
+                                        <li>• Revenue per patient</li>
+                                        <li>• Staff utilization rates</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-green-900 mb-2">Compliance Reports</h4>
+                                    <ul class="text-sm text-green-700 space-y-1">
+                                        <li>• Documentation compliance</li>
+                                        <li>• Privacy training status</li>
+                                        <li>• Incident tracking</li>
+                                        <li>• Regulatory requirements</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h3 class="font-semibold text-gray-900 mb-3">Key Features</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-clock text-green-500 mr-2"></i>
+                                        Real-time data analysis
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-calendar-range text-green-500 mr-2"></i>
+                                        Flexible date range filtering
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-download text-green-500 mr-2"></i>
+                                        PDF and CSV export options
+                                    </li>
+                                </ul>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                                        Visual charts and graphs
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-lightbulb text-green-500 mr-2"></i>
+                                        AI-generated insights
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-print text-green-500 mr-2"></i>
+                                        Print-friendly layouts
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="bg-white rounded-lg shadow-lg border border-gray-200">
+                    <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
+                        <h2 class="text-2xl font-semibold text-gray-900 flex items-center">
+                            <i class="fas fa-cog mr-3 text-gray-600"></i>
+                            Settings & Configuration
+                        </h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">Practice Settings</h3>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-calendar text-gray-500 mr-2"></i>
+                                        Date format preferences
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-dollar-sign text-gray-500 mr-2"></i>
+                                        Currency settings
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-clock text-gray-500 mr-2"></i>
+                                        Working hours configuration
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-bell text-gray-500 mr-2"></i>
+                                        Notification preferences
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-3">User Profile</h3>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-user text-gray-500 mr-2"></i>
+                                        Personal information
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-lock text-gray-500 mr-2"></i>
+                                        Password management
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-id-badge text-gray-500 mr-2"></i>
+                                        Professional details
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-photo text-gray-500 mr-2"></i>
+                                        Profile picture upload
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices -->
+            <div class="mt-12 bg-gradient-to-r from-green-600 to-green-700 rounded-lg shadow-xl overflow-hidden">
+                <div class="px-6 py-8">
+                    <h2 class="text-2xl font-bold text-white mb-4">💡 Best Practices</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="font-semibold text-white mb-3">Data Management</h3>
+                            <ul class="space-y-2 text-green-100 text-sm">
+                                <li>• Regularly backup your database</li>
+                                <li>• Keep patient information up to date</li>
+                                <li>• Use consistent naming conventions</li>
+                                <li>• Review and clean old records periodically</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-3">Security</h3>
+                            <ul class="space-y-2 text-green-100 text-sm">
+                                <li>• Use strong passwords</li>
+                                <li>• Log out when not in use</li>
+                                <li>• Keep software updated</li>
+                                <li>• Follow HIPAA compliance guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="text-center">
+                    <p class="text-gray-600">
+                        <a href="index.html" class="text-primary-600 hover:text-primary-700">← Back to Documentation Home</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

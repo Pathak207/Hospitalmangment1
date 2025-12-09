@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Care - User Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white shadow-lg border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-stethoscope text-3xl text-primary-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h1 class="text-3xl font-bold text-gray-900">Doctor Care</h1>
+                            <p class="text-lg text-gray-600">SaaS Healthcare Management Platform</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Next.js 14 & MongoDB
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Welcome Section -->
+            <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg shadow-xl overflow-hidden mb-8">
+                <div class="px-6 py-8 sm:px-8 sm:py-10">
+                    <div class="max-w-3xl">
+                        <h2 class="text-3xl font-bold text-white mb-4">
+                            Welcome to Doctor Care Documentation
+                        </h2>
+                        <p class="text-xl text-white/90 mb-6">
+                            A comprehensive SaaS healthcare management platform with subscription management, multi-tenancy, and super admin capabilities. 
+                            This documentation covers installation, configuration, SaaS features, subscription management, and complete system administration.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
+                                <i class="fab fa-react mr-2"></i>
+                                Next.js 14
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
+                                <i class="fas fa-database mr-2"></i>
+                                MongoDB
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
+                                <i class="fab fa-js-square mr-2"></i>
+                                TypeScript
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
+                                <i class="fas fa-paint-brush mr-2"></i>
+                                Tailwind CSS
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
+                                <i class="fas fa-credit-card mr-2"></i>
+                                Stripe Integration
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Email System
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <a href="installation.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-primary-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-download text-2xl text-primary-600 group-hover:text-primary-700"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700">Installation Guide</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Step-by-step installation and setup instructions</p>
+                    <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700">
+                        <span class="text-sm font-medium">Get Started</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <a href="features.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-primary-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-star text-2xl text-primary-600 group-hover:text-primary-700"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700">Features Overview</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Comprehensive guide to all system features</p>
+                    <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700">
+                        <span class="text-sm font-medium">Explore Features</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <a href="api-reference.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-primary-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-code text-2xl text-primary-600 group-hover:text-primary-700"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700">API Reference</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Complete API documentation for developers</p>
+                    <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700">
+                        <span class="text-sm font-medium">View API Docs</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <a href="configuration.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-primary-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-cog text-2xl text-primary-600 group-hover:text-primary-700"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700">Configuration</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Environment variables and system configuration</p>
+                    <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700">
+                        <span class="text-sm font-medium">Configure System</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <a href="user-guide.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-primary-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-book text-2xl text-primary-600 group-hover:text-primary-700"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700">User Guide</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">How to use all features and modules</p>
+                    <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700">
+                        <span class="text-sm font-medium">Read Guide</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+
+                <a href="troubleshooting.html" class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-200 hover:border-primary-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-tools text-2xl text-primary-600 group-hover:text-primary-700"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-700">Troubleshooting</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Common issues and their solutions</p>
+                    <div class="mt-4 flex items-center text-primary-600 group-hover:text-primary-700">
+                        <span class="text-sm font-medium">Find Solutions</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- System Requirements -->
+            <div class="bg-white rounded-lg shadow-lg border border-gray-200 mb-8">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-server mr-2 text-primary-600"></i>
+                        System Requirements
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-3">Minimum Requirements</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Node.js 18.0 or higher
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    MongoDB 4.4 or higher
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    npm, yarn, or pnpm
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    2GB RAM minimum
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-3">Recommended</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    Node.js 20.0+ for best performance
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    MongoDB Atlas cloud database
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    4GB RAM or more
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-star text-yellow-500 mr-2"></i>
+                                    SSD storage for better performance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Start -->
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-700">
+                    <h3 class="text-lg font-semibold text-white flex items-center">
+                        <i class="fas fa-rocket mr-2 text-primary-400"></i>
+                        Quick Start
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold text-white mb-4">After downloading from CodeCanyon:</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">1</span>
+                                    <div>
+                                        <p class="text-gray-300">Extract <code class="bg-gray-800 px-2 py-1 rounded text-primary-400">main_files.zip</code></p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">2</span>
+                                    <div>
+                                        <p class="text-gray-300">Extract <code class="bg-gray-800 px-2 py-1 rounded text-primary-400">doctor-care-next.zip</code></p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">3</span>
+                                    <div>
+                                        <p class="text-gray-300">Navigate to project folder</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3 mt-0.5">4</span>
+                                    <div>
+                                        <p class="text-gray-300">Follow the installation guide</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-4">Basic Commands:</h4>
+                            <div class="bg-gray-800 rounded-lg p-4 font-mono text-sm">
+                                <div class="text-green-400 mb-2"># Install dependencies</div>
+                                <div class="text-gray-300 mb-4">npm install</div>
+                                
+                                <div class="text-green-400 mb-2"># Setup environment</div>
+                                <div class="text-gray-300 mb-4">cp .env.example .env.local</div>
+                                
+                                <div class="text-green-400 mb-2"># Start development server</div>
+                                <div class="text-gray-300">npm run dev</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="text-center">
+                    <p class="text-gray-600">
+                        Doctor Care - SaaS Healthcare Management Platform
+                    </p>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Built with Next.js 14, TypeScript, MongoDB, Stripe, and Nodemailer
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 
