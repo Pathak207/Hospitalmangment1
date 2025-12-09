@@ -175,18 +175,6 @@ export async function middleware(request: NextRequest) {
   return response;
 }
 
-// Helper function to check subscription status (currently disabled to avoid loops)
-async function checkSubscriptionStatus(organizationId: string) {
-  try {
-    // This is temporarily disabled to prevent middleware loops
-    // In production, you'd want to implement direct database access here
-    return { isActive: true, reason: 'Middleware check disabled' };
-  } catch (error) {
-    console.error('Error checking subscription status:', error);
-    return { isActive: false, reason: 'Network error' };
-  }
-}
-
 // Configure which paths should trigger the middleware
 export const config = {
   matcher: [
